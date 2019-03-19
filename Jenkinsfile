@@ -6,12 +6,12 @@ pipeline {
     }
   }
   stages {
-    stage('Build') {
+    stage('Build Stage') {
       steps {
         sh label: '', script: 'mvn -B -DskipTests clean package'
       }
     }
-    stage('Test') {
+    stage('Test Stage') {
             steps {
                 sh 'mvn test'
             }
