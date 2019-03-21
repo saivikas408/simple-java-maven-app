@@ -31,8 +31,21 @@ pipeline {
         sh 'mvn test'
       }
     }
-    stage('Deliver Stage') {
+    stage('Deliver Stage - delevopment ') {
+		when {
+            branch 'development' 
+        }
       steps {
+		echo 'developemnt'
+        sh './jenkins/scripts/deliver.sh'
+      }
+    }
+	stage('Deliver Stage - production ') {
+		when {
+            branch 'production' 
+        }
+      steps {
+		echo 'production'
         sh './jenkins/scripts/deliver.sh'
       }
     }
