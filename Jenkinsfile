@@ -33,7 +33,7 @@ pipeline {
     }
     stage('Deliver Stage - delevopment ') {
 		when {
-            branch 'development' 
+            branch 'prod' 
         }
       steps {
 		echo 'developemnt'
@@ -42,7 +42,7 @@ pipeline {
     }
 	stage('Deliver Stage - production ') {
 		when {
-            branch 'production' 
+            branch 'prod' 
         }
       steps {
 		echo 'production'
